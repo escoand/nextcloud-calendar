@@ -146,7 +146,7 @@ class ViewControllerTest extends TestCase {
 			->method('getAllAppointmentConfigurations')
 			->with($this->userId)
 			->willReturn([new AppointmentConfig()]);
-		$this->initialStateService->expects(self::exactly(22))
+		$this->initialStateService->expects(self::exactly(23))
 			->method('provideInitialState')
 			->withConsecutive(
 				['app_version', '1.0.0'],
@@ -171,6 +171,7 @@ class ViewControllerTest extends TestCase {
 				['can_subscribe_link', false],
 				['show_resources', true],
 				['isCirclesEnabled', false],
+				['publicCalendars', null],
 			);
 
 		$response = $this->controller->index();
@@ -240,7 +241,7 @@ class ViewControllerTest extends TestCase {
 			->method('getAllAppointmentConfigurations')
 			->with($this->userId)
 			->willReturn([new AppointmentConfig()]);
-		$this->initialStateService->expects(self::exactly(22))
+		$this->initialStateService->expects(self::exactly(23))
 			->method('provideInitialState')
 			->withConsecutive(
 				['app_version', '1.0.0'],
@@ -265,6 +266,7 @@ class ViewControllerTest extends TestCase {
 				['can_subscribe_link', false],
 				['show_resources', true],
 				['isCirclesEnabled', false],
+				['publicCalendars', null],
 			);
 
 		$response = $this->controller->index();
