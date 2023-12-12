@@ -94,7 +94,7 @@ class ViewControllerTest extends TestCase {
 	}
 
 	public function testIndex(): void {
-		$this->config->expects(self::exactly(15))
+		$this->config->expects(self::exactly(16))
 			->method('getAppValue')
 			->willReturnMap([
 				['calendar', 'eventLimit', 'yes', 'defaultEventLimit'],
@@ -112,6 +112,7 @@ class ViewControllerTest extends TestCase {
 				['calendar', 'forceEventAlarmType', '', 'forceEventAlarmType'],
 				['dav', 'allow_calendar_link_subscriptions', 'yes', 'no'],
 				['calendar', 'showResources', 'yes', 'yes'],
+				['calendar', 'publicCalendars', ''],
 			]);
 		$this->config->expects(self::exactly(11))
 			->method('getUserValue')
@@ -187,7 +188,7 @@ class ViewControllerTest extends TestCase {
 	 * @param string $expectedView
 	 */
 	public function testIndexViewFix(string $savedView, string $expectedView): void {
-		$this->config->expects(self::exactly(15))
+		$this->config->expects(self::exactly(16))
 			->method('getAppValue')
 			->willReturnMap([
 				['calendar', 'eventLimit', 'yes', 'defaultEventLimit'],
@@ -205,6 +206,7 @@ class ViewControllerTest extends TestCase {
 				['calendar', 'forceEventAlarmType', '', 'forceEventAlarmType'],
 				['dav', 'allow_calendar_link_subscriptions', 'yes', 'no'],
 				['calendar', 'showResources', 'yes', 'yes'],
+				['calendar', 'publicCalendars', ''],
 			]);
 		$this->config->expects(self::exactly(11))
 			->method('getUserValue')
